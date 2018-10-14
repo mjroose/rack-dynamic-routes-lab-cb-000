@@ -8,6 +8,7 @@ class Application
     if req.path.match(/items/)
       search_term = req.path.split("/items/").last
       item = @@items.detect {|item| item.name == search_term}
+      
       if item
         resp.write item.price
       else
